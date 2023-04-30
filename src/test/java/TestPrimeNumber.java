@@ -3,7 +3,7 @@ import org.masrikdahir.PrimeNumber;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestPrime {
+public class TestPrimeNumber {
 
     PrimeNumber prime = new PrimeNumber();
 
