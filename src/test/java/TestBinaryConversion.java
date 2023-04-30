@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 public class TestBinaryConversion {
 
-    // Node Coverage
     BinaryConversion binaryConversion = new BinaryConversion();
 
     @Test
