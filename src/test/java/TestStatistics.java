@@ -1,9 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.masrikdahir.Statistics;
-
-import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TestStatistics {
     private static final double DELTA = 1e-15;
 

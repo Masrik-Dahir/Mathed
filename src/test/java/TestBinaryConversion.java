@@ -1,6 +1,5 @@
 import org.junit.Test;
 import org.masrikdahir.BinaryConversion;
-
 import static org.junit.Assert.*;
 
 public class TestBinaryConversion {

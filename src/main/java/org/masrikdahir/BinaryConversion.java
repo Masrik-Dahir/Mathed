@@ -1,5 +1,4 @@
 package org.masrikdahir;
-
 import java.math.BigInteger;
 
 public class BinaryConversion {
@@ -58,6 +57,5 @@ public class BinaryConversion {
         double divisor = new BigInteger(binaryDivisor, base).doubleValue();
         return value / divisor;
     }
-
 
 }
