@@ -19,15 +19,25 @@ public class TestGreatestCommonDenominator {
     @Test
     public void testGcdWithNegativeNumber() {
         int num1 = -24;
-        int num2 = 18;
+        int num2 = -18;
         assertThrows(ArithmeticException.class, () -> greatestCommonDenominator.gcd(num1, num2));
     }
 
+    // Mutation Coverage
     @Test
     public void testGcdWithZeroNumber() {
-        int num1 = 24;
+        int num1 = 0;
         int num2 = 0;
-        int expectedGcd = 24;
+        int expectedGcd = 0;
+        int actualGcd = greatestCommonDenominator.gcd(num1, num2);
+        assertEquals(expectedGcd, actualGcd);
+    }
+
+    @Test
+    public void testGcdWithZeroNumberAndPositiveNumber() {
+        int num1 = 0;
+        int num2 = 5;
+        int expectedGcd = 5;
         int actualGcd = greatestCommonDenominator.gcd(num1, num2);
         assertEquals(expectedGcd, actualGcd);
     }

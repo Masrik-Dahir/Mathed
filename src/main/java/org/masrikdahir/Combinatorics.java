@@ -15,52 +15,27 @@ public class Combinatorics {
     }
 
     public int permutation(int n, int r) {
-        if (n < 0 || r < 0){
-            throw new ArithmeticException("Negative Input");
+        if (r < 0 || r > n) {
+            throw new ArithmeticException("Invalid input");
         }
-
-        else if (r == 0){
-            return 1;
+        int result = 1;
+        for (int i = n; i > n - r; i--) {
+            result *= i;
         }
-
-        else if (r > n){
-            throw new ArithmeticException("R needs to be less than or equal to N");
-        }
-        int f1 = n;
-        for (int i = n - 1; i >= 1; i--) {
-            f1 = f1 * i;
-        }
-        int number;
-        number = n - r;
-        int f2 = number;
-        for (int i = number - 1; i >= 1; i--) {
-            f2 = f2 * i;
-        }
-
-        return f1 / f2;
+        return result;
     }
 
-    public double combination(int N, int K) {
-        if (N < 0 || K < 0){
-            throw new ArithmeticException("Negative Input");
+    public int combination(int n, int r) {
+        if (r < 0 || r > n) {
+            throw new ArithmeticException("Invalid input");
         }
-
-        else if (K == 0){
-            return 1;
+        int numerator = 1;
+        int denominator = 1;
+        for (int i = 0; i < r; i++) {
+            numerator *= n - i;
+            denominator *= i + 1;
         }
-
-        else if (K > N){
-            throw new ArithmeticException("R needs to be less than or equal to N");
-        }
-
-        BigInteger ret = BigInteger.ONE;
-        for (int k = 0; k < K; k++) {
-            ret = ret.multiply(BigInteger.valueOf( (long) N - k))
-                    .divide(BigInteger.valueOf(k + 1));
-        }
-        return Integer.parseInt(String.valueOf(ret));
-
-
+        return numerator / denominator;
     }
 
 }

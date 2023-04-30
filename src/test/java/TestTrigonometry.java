@@ -25,6 +25,13 @@ public class TestTrigonometry {
         assertEquals(1.0, trigonometry.sec(angle), 0.00001);
     }
 
+    //    Mutation
+    @Test
+    public void testSec360() {
+        double angle = Math.PI*2; // 0 degrees
+        assertEquals(1.0, trigonometry.sec(angle), 0.00001);
+    }
+
     @Test
     public void testSec90() {
         double angle = Math.PI/2; // 90 degrees
@@ -46,6 +53,13 @@ public class TestTrigonometry {
     @Test
     public void testCosecZero() {
         double angle = 0; // 0 degrees
+        assertThrows(ArithmeticException.class, () -> trigonometry.cosec(angle));
+    }
+
+    //    Mutation
+    @Test
+    public void testCosec360() {
+        double angle = Math.PI*2; // 0 degrees
         assertThrows(ArithmeticException.class, () -> trigonometry.cosec(angle));
     }
 

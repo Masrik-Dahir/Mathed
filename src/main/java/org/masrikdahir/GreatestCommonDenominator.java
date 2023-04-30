@@ -7,7 +7,7 @@ public class GreatestCommonDenominator {
         }
 
         if (num1 == 0 || num2 == 0) {
-            return Math.abs(num1 - num2);
+            return Math.max(num1, num2);
         }
 
         while (num1 % num2 != 0) {

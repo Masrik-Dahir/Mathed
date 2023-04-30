@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.masrikdahir.PrimeNumber;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPrimeNumber {
 
@@ -19,6 +19,28 @@ public class TestPrimeNumber {
         assertFalse(prime.isPrime(n));
     }
 
+    //    Mutation
+    @Test
+    public void testIsPrimeWithNumberGreaterThanAndDivisibleBy2() {
+        int n = 4;
+        assertFalse(prime.isPrime(n));
+    }
+
+
+    @Test
+    public void testIsPrimeWithZero() {
+        int n = 0;
+        assertFalse(prime.isPrime(n));
+    }
+
+    //    Mutation
+    @Test
+    public void testIsPrimeWithNumberOne() {
+        int n = 1;
+        assertFalse(prime.isPrime(n));
+    }
+
+    //    Mutation
     @Test
     public void testIsPrimeWithNumberTwo() {
         int n = 2;
@@ -28,12 +50,7 @@ public class TestPrimeNumber {
     @Test
     public void testIsPrimeWithNegativeNumbers() {
         int n = -17;
-        assertFalse(prime.isPrime(n));
+        assertThrows(ArithmeticException.class, () -> prime.isPrime(n));
     }
 
-    @Test
-    public void testIsPrimeWithZero() {
-        int n = 0;
-        assertFalse(prime.isPrime(n));
-    }
 }

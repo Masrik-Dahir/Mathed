@@ -21,6 +21,7 @@ public class TestCombinatorics {
         assertEquals(1, combinatorics.permutation(n, r), 0.00001);
     }
 
+    // Mutation Coverage
     @Test
     public void testPermutationWithRGreaterThanN() {
         int n = 4;
@@ -28,12 +29,14 @@ public class TestCombinatorics {
         assertThrows(ArithmeticException.class, () -> combinatorics.permutation(n, r));
     }
 
+
     @Test
     public void testPermutationWithNegativeValues() {
         int n = -5;
         int r = -3;
         assertThrows(ArithmeticException.class, () -> combinatorics.permutation(n, r));
     }
+
 
     @Test
     public void testCombination() {
@@ -49,6 +52,7 @@ public class TestCombinatorics {
         assertEquals(1, combinatorics.combination(n, r), 0.00001);
     }
 
+    // Mutation Coverage
     @Test
     public void testCombinationWithRGreaterThanN() {
         int n = 4;
