@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 import org.masrikdahir.Statistics;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestStatistics {
+
     private static final double DELTA = 1e-15;
 
     @Test
@@ -20,7 +21,6 @@ public class TestStatistics {
         assertEquals(1.5811388300841898, standardDeviation, DELTA);
     }
 
-    // Mutation Testing
     @Test
     public void testVariance() {
         double[] data = {0, 27.0, 13.0, 544.0, 15.0};

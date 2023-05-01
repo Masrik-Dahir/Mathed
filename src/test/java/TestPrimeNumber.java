@@ -19,13 +19,11 @@ public class TestPrimeNumber {
         assertFalse(prime.isPrime(n));
     }
 
-    //    Mutation
     @Test
     public void testIsPrimeWithNumberGreaterThanAndDivisibleBy2() {
         int n = 4;
         assertFalse(prime.isPrime(n));
     }
-
 
     @Test
     public void testIsPrimeWithZero() {
@@ -33,14 +31,12 @@ public class TestPrimeNumber {
         assertFalse(prime.isPrime(n));
     }
 
-    //    Mutation
     @Test
     public void testIsPrimeWithNumberOne() {
         int n = 1;
         assertFalse(prime.isPrime(n));
     }
 
-    //    Mutation
     @Test
     public void testIsPrimeWithNumberTwo() {
         int n = 2;

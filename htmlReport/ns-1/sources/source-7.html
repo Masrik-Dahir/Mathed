@@ -77,25 +77,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;package org.masrikdahir;
 &nbsp;
 <b class="fc">&nbsp;public class Trigonometry {</b>
-&nbsp;    // Calculate the secant of an angle in radians
 &nbsp;    public double sec(double angle) {
 <b class="fc">&nbsp;        double cos = Math.cos(angle);</b>
-<b class="fc">&nbsp;        if (Math.abs(cos) &lt; 0.000000001){</b>
+<b class="fc">&nbsp;        if (Math.abs(Math.toDegrees(angle))%90 == 0 &amp;&amp; Math.abs(Math.toDegrees(angle))%360 != 0){</b>
 <b class="fc">&nbsp;            throw new ArithmeticException(&quot;Double overflowed&quot;);</b>
 &nbsp;        }
 <b class="fc">&nbsp;        return 1 / cos;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    // Calculate the cosecant of an angle in radians
 &nbsp;    public double cosec(double angle) {
 <b class="fc">&nbsp;        double sin = Math.sin(angle);</b>
-<b class="fc">&nbsp;        if (Math.abs(sin) &lt; 0.000000001){</b>
+<b class="fc">&nbsp;        if ( Math.abs(Math.toDegrees(angle))%360 == 0 ){</b>
 <b class="fc">&nbsp;            throw new ArithmeticException(&quot;Double overflowed&quot;);</b>
 &nbsp;        }
 <b class="fc">&nbsp;        return 1 / sin;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    // Calculate the cotangent of an angle in radians
 &nbsp;    public double cot(double angle) {
 <b class="fc">&nbsp;        double cot = Math.cos(angle)/Math.sin(angle);</b>
 <b class="fc">&nbsp;        if (cot == Double.POSITIVE_INFINITY){</b>
@@ -127,7 +124,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-04-29 22:07</div>
+    <div style="float:right;">generated on 2023-04-30 19:44</div>
 </div>
 </body>
 </html>

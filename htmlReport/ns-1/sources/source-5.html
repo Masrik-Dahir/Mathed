@@ -62,7 +62,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (9/9)
+    (11/11)
   </span>
 </td>
 </tr>
@@ -78,12 +78,16 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 <b class="fc">&nbsp;public class PrimeNumber {</b>
 &nbsp;    public boolean isPrime(int n) {
-<b class="fc">&nbsp;        if (n == 2) {</b>
+<b class="fc">&nbsp;        if (n &lt; 0) {</b>
+<b class="fc">&nbsp;            throw new ArithmeticException(&quot;Negative Number&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        else if (n == 2) {</b>
 <b class="fc">&nbsp;            return true;</b>
 &nbsp;        }
-<b class="fc">&nbsp;        if (n &lt; 2 || n % 2 == 0) {</b>
+<b class="fc">&nbsp;        else if (n == 1 || n % 2 == 0) {</b>
 <b class="fc">&nbsp;            return false;</b>
 &nbsp;        }
+&nbsp;
 <b class="fc">&nbsp;        for (int i = 3, limit = (int) Math.sqrt(n); i &lt;= limit; i += 2) {</b>
 <b class="fc">&nbsp;            if (n % i == 0) {</b>
 <b class="fc">&nbsp;                return false;</b>
@@ -115,7 +119,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-04-29 22:07</div>
+    <div style="float:right;">generated on 2023-04-30 19:44</div>
 </div>
 </body>
 </html>

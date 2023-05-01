@@ -62,7 +62,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (32/32)
+    (21/21)
   </span>
 </td>
 </tr>
@@ -91,52 +91,27 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    }
 &nbsp;
 &nbsp;    public int permutation(int n, int r) {
-<b class="fc">&nbsp;        if (n &lt; 0 || r &lt; 0){</b>
-<b class="fc">&nbsp;            throw new ArithmeticException(&quot;Negative Input&quot;);</b>
+<b class="fc">&nbsp;        if (r &lt; 0 || r &gt; n) {</b>
+<b class="fc">&nbsp;            throw new ArithmeticException(&quot;Invalid input&quot;);</b>
 &nbsp;        }
-&nbsp;
-<b class="fc">&nbsp;        else if (r == 0){</b>
-<b class="fc">&nbsp;            return 1;</b>
+<b class="fc">&nbsp;        int result = 1;</b>
+<b class="fc">&nbsp;        for (int i = n; i &gt; n - r; i--) {</b>
+<b class="fc">&nbsp;            result *= i;</b>
 &nbsp;        }
-&nbsp;
-<b class="fc">&nbsp;        else if (r &gt; n){</b>
-<b class="fc">&nbsp;            throw new ArithmeticException(&quot;R needs to be less than or equal to N&quot;);</b>
-&nbsp;        }
-<b class="fc">&nbsp;        int f1 = n;</b>
-<b class="fc">&nbsp;        for (int i = n - 1; i &gt;= 1; i--) {</b>
-<b class="fc">&nbsp;            f1 = f1 * i;</b>
-&nbsp;        }
-&nbsp;        int number;
-<b class="fc">&nbsp;        number = n - r;</b>
-<b class="fc">&nbsp;        int f2 = number;</b>
-<b class="fc">&nbsp;        for (int i = number - 1; i &gt;= 1; i--) {</b>
-<b class="fc">&nbsp;            f2 = f2 * i;</b>
-&nbsp;        }
-&nbsp;
-<b class="fc">&nbsp;        return f1 / f2;</b>
+<b class="fc">&nbsp;        return result;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public double combination(int N, int K) {
-<b class="fc">&nbsp;        if (N &lt; 0 || K &lt; 0){</b>
-<b class="fc">&nbsp;            throw new ArithmeticException(&quot;Negative Input&quot;);</b>
+&nbsp;    public int combination(int n, int r) {
+<b class="fc">&nbsp;        if (r &lt; 0 || r &gt; n) {</b>
+<b class="fc">&nbsp;            throw new ArithmeticException(&quot;Invalid input&quot;);</b>
 &nbsp;        }
-&nbsp;
-<b class="fc">&nbsp;        else if (K == 0){</b>
-<b class="fc">&nbsp;            return 1;</b>
+<b class="fc">&nbsp;        int numerator = 1;</b>
+<b class="fc">&nbsp;        int denominator = 1;</b>
+<b class="fc">&nbsp;        for (int i = 0; i &lt; r; i++) {</b>
+<b class="fc">&nbsp;            numerator *= n - i;</b>
+<b class="fc">&nbsp;            denominator *= i + 1;</b>
 &nbsp;        }
-&nbsp;
-<b class="fc">&nbsp;        else if (K &gt; N){</b>
-<b class="fc">&nbsp;            throw new ArithmeticException(&quot;R needs to be less than or equal to N&quot;);</b>
-&nbsp;        }
-&nbsp;
-<b class="fc">&nbsp;        BigInteger ret = BigInteger.ONE;</b>
-<b class="fc">&nbsp;        for (int k = 0; k &lt; K; k++) {</b>
-<b class="fc">&nbsp;            ret = ret.multiply(BigInteger.valueOf( (long) N - k))</b>
-<b class="fc">&nbsp;                    .divide(BigInteger.valueOf(k + 1));</b>
-&nbsp;        }
-<b class="fc">&nbsp;        return Integer.parseInt(String.valueOf(ret));</b>
-&nbsp;
-&nbsp;
+<b class="fc">&nbsp;        return numerator / denominator;</b>
 &nbsp;    }
 &nbsp;
 &nbsp;}
@@ -163,7 +138,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-04-29 22:07</div>
+    <div style="float:right;">generated on 2023-04-30 19:44</div>
 </div>
 </body>
 </html>

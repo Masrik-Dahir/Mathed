@@ -25,7 +25,6 @@ public class TestTrigonometry {
         assertEquals(1.0, trigonometry.sec(angle), 0.00001);
     }
 
-    //    Mutation
     @Test
     public void testSec360() {
         double angle = Math.PI*2; // 0 degrees
@@ -56,7 +55,6 @@ public class TestTrigonometry {
         assertThrows(ArithmeticException.class, () -> trigonometry.cosec(angle));
     }
 
-    //    Mutation
     @Test
     public void testCosec360() {
         double angle = Math.PI*2; // 0 degrees
@@ -90,7 +88,6 @@ public class TestTrigonometry {
     @Test
     public void testCot90() {
         double angle = Math.PI/2; // 90 degrees
-        System.out.println(Math.tan(angle));
         assertEquals(0, trigonometry.cot(angle), 0.00001);
     }
 }

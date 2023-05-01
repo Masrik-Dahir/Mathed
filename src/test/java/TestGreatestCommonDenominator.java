@@ -23,7 +23,6 @@ public class TestGreatestCommonDenominator {
         assertThrows(ArithmeticException.class, () -> greatestCommonDenominator.gcd(num1, num2));
     }
 
-    // Mutation Coverage
     @Test
     public void testGcdWithZeroNumber() {
         int num1 = 0;
